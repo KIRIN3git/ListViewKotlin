@@ -11,7 +11,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         //ListViewオブジェクトを取得。
-        val lvMenu = findViewById<ListView>(R.id.myListView)
+        val myList = findViewById<ListView>(R.id.myListView)
 
         //データをリストビューに入れる
         val user_list = mutableListOf<UserModel>()
@@ -19,6 +19,7 @@ class MainActivity : AppCompatActivity() {
             user_list.add(UserModel(value.Name,value.Age))
         }
 
-        lvMenu.adapter = UserAdapter(applicationContext,user_list)
+        // ListViewにアダプターを設定
+        myList.adapter = UserAdapter(applicationContext,user_list)
     }
 }
